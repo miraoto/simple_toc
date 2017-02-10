@@ -22,7 +22,7 @@ To require this plguin, add the following to your application.js:
 
 ``` javascript
 
-//= require simple_toc
+//= require simpleToc
 
 ```
 
@@ -31,7 +31,14 @@ This plugin require jQuery.
 ``` javascript
 $(function() {
   # simple case
-  $('.toc').simpleToc()
+  $('.toc').simpleToc();
+
+  # advance case
+  $('.toc').simpleToc({
+      listType: '<ol/>',
+      selectors: 'h1,h2,h3',
+      prefix: 'toc',
+  });
 });
 ```
 
