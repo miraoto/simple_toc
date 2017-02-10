@@ -10,7 +10,6 @@ Gem::Specification.new do |spec|
   spec.email         = ["miraoto@gmail.com"]
 
   spec.summary       = %q{'simple-toc' makes a simple table of contents from DOM structure.}
-  spec.description   = %q{TODO: Write a longer description or delete thiu.}
   spec.homepage      = "https://github.com/miraoto/simple_toc"
   spec.license       = "MIT"
 
