@@ -1,5 +1,7 @@
 # SimpleToc
 
+[![Gem Version](https://badge.fury.io/rb/simple_toc.svg)](https://badge.fury.io/rb/simple_toc) [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+
 'simple-toc' makes a simple table of contents from DOM structure.
 
 ## Installation
@@ -31,16 +33,26 @@ This plugin require jQuery.
 ``` javascript
 $(function() {
   # simple case
-  $('.toc').simpleToc();
+  $('#toc').simpleToc();
 
   # advance case
-  $('.toc').simpleToc({
+  $('#toc').simpleToc({
       listType: '<ol/>',
       selectors: 'h1,h2,h3',
       prefix: 'toc',
   });
 });
 ```
+
+``` html
+<div class="#toc"></div>
+
+<h2>hoge</h2>
+<h2>fuga</h2>
+<h3>fuga > fuga</h3>
+<h2>piyo</h2>
+```
+
 
 ## Contributing
 
