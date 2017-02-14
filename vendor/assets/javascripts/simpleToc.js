@@ -32,7 +32,6 @@
         var ul = $(plugin.settings.listType);
 
         headers.each(function(i, header) {
-          console.log(header)
           var $h = $(header);
           var anchorName = plugin.settings.anchorName(i, plugin.settings.prefix);
 
@@ -41,7 +40,10 @@
           }
 
           var a = $('<a/>').text(plugin.settings.headerText($h))
-                           .attr('href', '#' + anchorName);
+                           .attr('href', '#' + anchorName)
+                           .on('click', function(){
+                             $('html,body').animate({scrollTop: $h.offset().top}, 500, 'linear');
+                           });
           var li = $('<li/>').addClass(plugin.settings.listClass(i, header, $h, plugin.settings.prefix))
                              .append(a);
           ul.append(li);
