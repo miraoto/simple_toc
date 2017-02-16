@@ -45,7 +45,7 @@ $(function() {
 ```
 
 ``` html
-<div class="#toc"></div>
+<div id="toc"></div>
 
 <h2>hoge</h2>
 <h2>fuga</h2>
