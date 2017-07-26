@@ -32,12 +32,12 @@
         var ul = $(plugin.settings.listType);
 
         headers.each(function(i, header) {
-          if (plugin.settings.headerText($h).length <= 0) {
-            return true;
-          }
           var $h = $(header);
           var anchorName = plugin.settings.anchorName(i, plugin.settings.prefix);
 
+          if (plugin.settings.headerText($h).length <= 0) {
+            return true;
+          }
           if(header.id !== anchorName) {
             $('<span/>').attr('id', anchorName).insertBefore($h);
           }
