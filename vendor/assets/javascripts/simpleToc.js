@@ -34,15 +34,15 @@
         headers.each(function(i, header) {
           var $h = $(header);
           var anchorName = plugin.settings.anchorName(i, plugin.settings.prefix);
-
-          if (plugin.settings.headerText($h).length <= 0) {
+          var headerText = plugin.settings.headerText($h).replace(/\s/g, "");
+          if (headerText.length <= 0) {
             return true;
           }
           if(header.id !== anchorName) {
             $('<span/>').attr('id', anchorName).insertBefore($h);
           }
 
-          var a = $('<a/>').text(plugin.settings.headerText($h))
+          var a = $('<a/>').text(headerText)
                            .attr('href', '#' + anchorName)
                            .on('click', function(){
                              $('html,body').animate({scrollTop: $h.offset().top}, 500, 'linear');
