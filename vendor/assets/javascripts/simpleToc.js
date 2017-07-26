@@ -33,7 +33,7 @@
 
         headers.each(function(i, header) {
           if (plugin.settings.headerText($h).length <= 0) {
-            continue;
+            return true;
           }
           var $h = $(header);
           var anchorName = plugin.settings.anchorName(i, plugin.settings.prefix);
