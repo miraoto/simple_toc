@@ -9,7 +9,7 @@
         return prefix + '-' + i;
       },
       headerText: function($heading) {
-        return $heading.text();
+        return $heading.replaceWith( $heading.html().replace(/<\/?[^>]+>/gi, ' '))
       },
       listClass: function(i, heading, $heading, prefix) {
         return prefix + '-' + $heading[0].tagName.toLowerCase();
