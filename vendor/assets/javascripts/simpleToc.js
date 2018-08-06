@@ -34,7 +34,6 @@
         headers.each(function(i, header) {
           var $h = $(header);
           var anchorName = plugin.settings.anchorName(i, plugin.settings.prefix);
-          console.log(plugin.settings.headerText($h))
           var headerText = plugin.settings.headerText($h)
           if (headerText.length <= 0) {
             return true;
