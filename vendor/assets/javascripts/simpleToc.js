@@ -9,7 +9,7 @@
         return prefix + '-' + i;
       },
       headerText: function($heading) {
-        return $heading.text();
+        return $heading.html().replace(/<\/?[^>]+>/gi, ' ').replace(/^\s/g, '')
       },
       listClass: function(i, heading, $heading, prefix) {
         return prefix + '-' + $heading[0].tagName.toLowerCase();
@@ -34,7 +34,8 @@
         headers.each(function(i, header) {
           var $h = $(header);
           var anchorName = plugin.settings.anchorName(i, plugin.settings.prefix);
-          var headerText = plugin.settings.headerText($h).replace(/\s/g, "");
+          console.log(plugin.settings.headerText($h))
+          var headerText = plugin.settings.headerText($h)
           if (headerText.length <= 0) {
             return true;
           }
