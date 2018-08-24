@@ -9,7 +9,7 @@
         return prefix + '-' + i;
       },
       headerText: function($heading) {
-        return $heading.html().replace(/<\/?[^>]+>/gi, ' ').replace(/^\s/g, '')
+        return $heading.text().replace(/<\/?[^>]+>/gi, ' ').replace(/^\s/g, '')
       },
       listClass: function(i, heading, $heading, prefix) {
         return prefix + '-' + $heading[0].tagName.toLowerCase();
@@ -41,7 +41,6 @@
           if(header.id !== anchorName) {
             $('<span/>').attr('id', anchorName).insertBefore($h);
           }
-
           var a = $('<a/>').text(headerText)
                            .attr('href', '#' + anchorName)
                            .on('click', function(){
